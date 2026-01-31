@@ -8,19 +8,23 @@ const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(defaultMessa
 const cars = [
   {
     name: "Porsche 911 GT3RS",
-    price: "Rp 350rb/hari"
+    price: "Rp 350rb/hari",
+    img: "/image/car/audi.avif"
   },
   {
     name: "BMW M3",
-    price: "Rp 300rb/hari"
+    price: "Rp 300rb/hari",
+    img: "/image/car/audi.avif"
   },
   {
     name: "AUDI R8",
-    price: "Rp 600rb/hari"
+    price: "Rp 600rb/hari",
+    img: "/image/car/audi.avif"
   },
   {
     name: "Nissan GTR25",
-    price: "Rp 1.2jt/hari"
+    price: "Rp 1.2jt/hari",
+    img: "/image/car/audi.avif"
   }
 ];
 ---
@@ -99,6 +103,7 @@ const cars = [
           cars.map((car) => (
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition border border-gray-100">
               <img
+                src={car.img}
                 alt={car.name}
                 class="w-full h-48 object-cover"
                 loading="lazy"
