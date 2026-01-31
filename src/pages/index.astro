@@ -1,33 +1,26 @@
 ---
-// src/pages/index.astro
-// Tidak ada JS framework berat yang di-load di sini. Pure HTML/CSS build.
-
 import "../styles/global.css";
 
-const waNumber = "6282249154086"; // Ganti dengan nomor King
+const waNumber = "6282249154086";
 const defaultMessage = "Halo, saya mau sewa mobil. Apakah unit tersedia?";
 const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
 const cars = [
   {
     name: "Porsche 911 GT3RS",
-    price: "Rp 350rb/hari",
-    img: "/image/car/porsche.avif"
+    price: "Rp 350rb/hari"
   },
   {
     name: "BMW M3",
-    price: "Rp 300rb/hari",
-    img: "/image/car/bmw.avif"
+    price: "Rp 300rb/hari"
   },
   {
     name: "AUDI R8",
-    price: "Rp 600rb/hari",
-    img: "/image/car/audi.avif"
+    price: "Rp 600rb/hari"
   },
   {
     name: "Nissan GTR25",
-    price: "Rp 1.2jt/hari",
-    img: "/image/car/gtr.avif"
+    price: "Rp 1.2jt/hari"
   }
 ];
 ---
@@ -47,11 +40,14 @@ const cars = [
     <header class="relative bg-slate-900 text-white overflow-hidden">
       <div class="absolute inset-0 bg-black/50 z-10"></div>
       <img
-        src="/image/hero.avif"
+        srcset="/image/hero/568.avif 568w,
+          /image/hero/1136.avif 1136w,
+          /image/hero/1704.avif 1704w"
+        sizes="100vw"
         alt="Rental Mobil Background"
         class="absolute inset-0 w-full h-full object-cover z-0"
-        width="1200"
-        height="600"
+        width="568"
+        height="379"
         fetchpriority="high"
       />
 
@@ -103,7 +99,6 @@ const cars = [
           cars.map((car) => (
             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition border border-gray-100">
               <img
-                src={car.img}
                 alt={car.name}
                 class="w-full h-48 object-cover"
                 loading="lazy"
