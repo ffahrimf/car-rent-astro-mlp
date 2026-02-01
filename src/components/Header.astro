@@ -1,0 +1,56 @@
+---
+import Picture from "astro/components/Picture.astro";
+import heroImage from "../assets/images/hero.jpg";
+---
+
+<header class="relative bg-slate-900 text-white overflow-hidden">
+  <div class="absolute inset-0 bg-black/50 z-10">
+    <Picture
+      src={heroImage}
+      formats={["avif", "webp"]}
+      widths={[360, 720, 1440, heroImage.width]}
+      sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, 100vw`}
+      alt="Hero Banner Automotive"
+      loading="eager"
+      fetchpriority="high"
+      class="w-full h-full object-cover block"
+    />
+  </div>
+
+  <div
+    class="relative z-20 max-w-full mx-auto px-4 py-24 md:py-32 flex flex-col items-center text-center"
+  >
+    <h1
+      class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white"
+    >
+      Sewa Mobil <span class="text-yellow-400">Tanpa Ribet</span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+      Armada terbaru, bersih, dan siap antar jemput bandara. Harga transparan
+      tanpa biaya tersembunyi.
+    </p>
+    <a
+      href="#armada"
+      class="bg-yellow-400 text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg"
+    >
+      Lihat Unit Tersedia
+    </a>
+  </div>
+</header>
+
+<section class="py-8 bg-white shadow-sm">
+  <div class="max-w-full mx-auto px-4 grid grid-cols-3 gap-4 text-center">
+    <div>
+      <p class="font-bold text-xl text-slate-900">24 Jam</p>
+      <p class="text-sm text-gray-500">Layanan Support</p>
+    </div>
+    <div>
+      <p class="font-bold text-xl text-slate-900">50+</p>
+      <p class="text-sm text-gray-500">Unit Ready</p>
+    </div>
+    <div>
+      <p class="font-bold text-xl text-slate-900">Asuransi</p>
+      <p class="text-sm text-gray-500">All Risk</p>
+    </div>
+  </div>
+</section>
